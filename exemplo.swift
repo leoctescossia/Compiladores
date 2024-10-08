@@ -1,3 +1,5 @@
+
+// Exemplo da utilização dos casos de Enum
 enum Direcao {
     case norte
     case sul
@@ -6,19 +8,21 @@ enum Direcao {
 }
 
 var minhaDirecao = Direcao.norte
+// Any pode conter qualquer tipo de valor
 
 var variavelGenerica: Any = 42
 variavelGenerica = "Agora sou uma string"
 variavelGenerica = true
 
 class Pessoa {}
-let objeto: AnyObject = Pessoa()
+let objeto: AnyObject = Pessoa() // AnyObject pode conter instâncias de classes
 
+// Função de saudação que aceita um nome como parâmetro
 func saudacao(nome: String) -> String {
     return "Olá, \(nome)!"
 }
 
-
+// Função com parâmetro padrão (sobrecarga de função anterior)
 func saudacao(nome: String = "Visitante") -> String {
     return "Olá, \(nome)!"
 }
@@ -26,14 +30,14 @@ func saudacao(nome: String = "Visitante") -> String {
 print(saudacao())  
 print(saudacao(nome: "Ana"))
 
-
+// Função variádica que aceita múltiplos parâmetros do tipo Int
 func somarNumeros(_ numeros: Int...) -> Int {
     return numeros.reduce(0, +)
 }
 
 print(somarNumeros(1, 2, 3))
 
-
+// Função que dobra o número, mas a variável é copiada, não altera fora do escopo
 func dobrarNumero(_ numero: Int) {
     var numero = numero
     numero *= 2
@@ -44,7 +48,7 @@ var valor = 5
 dobrarNumero(valor)
 print(valor)  
 
-
+// Agora utilizando 'inout' para passar por referência
 func dobrarNumero(_ numero: inout Int) {
     numero *= 2
 }
@@ -53,14 +57,16 @@ var valor = 5
 dobrarNumero(&valor) // Passa a variável por referência
 print(valor)   
 
+// Função que soma dois números
 func somar(a: Int, b: Int) -> Int {
     return a + b
 }
 
+// Utilizando a função somar através de um tipo de função
 var operacao: (Int, Int) -> Int = somar
 let resultado = operacao(3, 5)
 
-
+// Sobrecarga de funções para imprimir diferentes tipos de valores
 func imprimirValor(_ valor: Int) {
     print("Inteiro: \(valor)")
 }
@@ -72,14 +78,14 @@ func imprimirValor(_ valor: String) {
 imprimirValor(42)     
 imprimirValor("Olá!")  
 
+let mensagem = saudacao(nome: "Carlos") // Chama a função saudacao
 
-let mensagem = saudacao(nome: "Carlos")
-
+// Função de soma como closure
 let soma = { (a: Int, b: Int) -> Int in
     return a + b
 }
 
-
+// Exemplo de uso de variáveis e constantes com camelCase
 var numero = 42  // Inferência implícita: Int
 var texto: String = "Olá, mundo!"  // Declaração explícita
 
@@ -103,7 +109,7 @@ var idade = 30  // Swift infere que "idade" é do tipo Int
 var altura: Double = 1.75  // Tipo explicitamente declarado como Double
 
 # Níveis e Modificadores de Escopo
-
+// Exemplo de encapsulamento com modificadores de acesso
 public class Pessoa {
     private var nome: String  // Acesso privado, somente dentro da classe
     
