@@ -384,4 +384,90 @@ class Bicicleta: Dirigivel {
 let bicicleta = Bicicleta()
 bicicleta.dirigir()  // Saída: Pedalando a bicicleta.
 
+1. Principais Operadores: Aritméticos, Relacionais e Lógicos
+Operadores Aritméticos:
 
+let a = 10
+let b = 3
+let soma = a + b    // 13
+let resto = a % b   // 1
+print(soma, resto)
+
+Operadores Relacionais:
+
+let x = 10
+let y = 5
+print(x > y)    // true
+print(x == y)   // false
+
+Operadores Lógicos:
+
+let a = true
+let b = false
+print(a && b)  // false
+print(a || b)  // true
+
+2. Possui Operador Ternário?
+
+let numero = 10
+let resultado = numero > 5 ? "Maior que 5" : "Menor ou igual a 5"
+print(resultado)  // Saída: Maior que 5
+
+3. Operador Lógico com Curto-Circuito
+
+let x = false
+let y = true
+
+if x && y {
+    print("Ambos são verdadeiros")
+} else {
+    print("Curto-circuito ocorreu")  // Esta linha será executada
+}
+
+let a = true
+let b = false
+
+if a || b {
+    print("Curto-circuito com OR")  // Esta linha será executada
+}
+
+4. Regras de Precedência e Associatividade
+
+Exemplo de Precedência:
+let resultado = 2 + 3 * 4   // 2 + (3 * 4) = 14
+print(resultado)  // 14
+
+Exemplo de Associatividade:
+let resultado = 5 - 3 - 2  // (5 - 3) - 2 = 0
+print(resultado)  // 0
+
+1. Suporte a Desvio Incondicional (Labels e Goto)
+outerLoop: for i in 1...3 {
+    for j in 1...3 {
+        if j == 2 {
+            break outerLoop  // Sai do loop externo
+        }
+        print("i: \(i), j: \(j)")
+    }
+}
+
+## Suporte a Ponteiros e Referências em Swift
+
+Exemplo de ponteiro com UnsafePointer:
+let number = 42
+let pointer = UnsafePointer<Int>(bitPattern: number)
+print(pointer as Any)
+
+## Função Genérica para Trocar Valores
+// Função genérica que pode aceitar qualquer tipo de parâmetro
+func trocar<T>(a: inout T, b: inout T) {
+    let temp = a
+    a = b
+    b = temp
+}
+
+var num1 = 5
+var num2 = 10
+trocar(a: &num1, b: &num2)
+print(num1)  // Saída: 10
+print(num2)  // Saída: 5
