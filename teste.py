@@ -4,6 +4,8 @@ from colorama import Fore, Style
 # positive_numbers = 0123456789
 # negative_numbers = 123456789
 
+# IMPORTANTE DESTACAR: CRÉDITOS A GABRIEL, YURI E DEMAIS. POR DEIXAREM UTILIZAR ESSE CÓDIGO PARA TESTE.
+
 # Nova expressão regular
 regex = r'''\[
       (
