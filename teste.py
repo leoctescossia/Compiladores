@@ -2,6 +2,10 @@ import re
 from colorama import Fore, Style
 
 # IMPORTANTE DESTACAR: CRÉDITOS A GABRIEL, YURI E DEMAIS. POR AJUDAREM A MONTAR E ENSINAREM COMO UTILIZAR ESSE CÓDIGO PARA TESTE. 
+# OUTRO PONTO IMPORTANTE A SE DESTACAR, COPIAR MANUALMENTE E NÃO COPIAR ESSE ARQUIVO PELO RAW. NÃO SABEMOS PORQUE, MAS COPIANDO DESSA FORMA 
+#ELE IGNORA OS 2 ÚLTIMOS TESTES:
+#{"input": "x['end']", "should_accept": True},
+#{"input": "x['end ']", "should_accept": True},
 
 # Nova expressão regular
 regex = r'''\[
