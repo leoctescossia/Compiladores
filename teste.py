@@ -52,7 +52,7 @@ for test in test_cases:
     is_valid = match is not None
     should_accept = test["should_accept"]
 
-    if is_valid == should_accept:
+    if is_valid:
         print(f"{Fore.GREEN}Entrada: {test['input']} -> Capturado: {match.group(0) if match else 'Nenhum'} (Válido){Style.RESET_ALL}")
         Trues.append(test["input"])
     else:
