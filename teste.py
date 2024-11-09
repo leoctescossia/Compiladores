@@ -4,11 +4,12 @@ from colorama import Fore, Style
 # positive_numbers = 0123456789
 # negative_numbers = 123456789
 
-# IMPORTANTE DESTACAR: CRÉDITOS A GABRIEL, YURI E DEMAIS. POR DEIXAREM UTILIZAR ESSE CÓDIGO PARA TESTE.
+# IMPORTANTE DESTACAR: CRÉDITOS A GABRIEL, YURI E DEMAIS. POR AJUDAREM A MONTAR E ENSINAREM COMO UTILIZAR ESSE CÓDIGO PARA TESTE. 
 
 # Nova expressão regular
 regex = r'''\[
-      (
+    \s*
+    (
         -[1-9]+(:-[1-9]+)?              # Número negativo ou slice com números negativos
         |
         \d+(:\d+)?                # Número inteiro positivo ou zero, ou slice com números inteiros positivos/zero
@@ -16,8 +17,10 @@ regex = r'''\[
         '[a-zA-Z0-9 ]+'(:'[a-zA-Z0-9 ]+')?  # Nome de coluna em aspas simples ou slice entre aspas simples
         |
         "[a-zA-Z0-9 ]+"(:"[a-zA-Z0-9 ]+")?  # Nome de coluna em aspas duplas ou slice entre aspas duplas
-    )
-\]'''
+    )
+    \s*
+\]
+'''
 
 # Lista de casos de teste como objetos
 test_cases = [
