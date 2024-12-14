@@ -1,4 +1,6 @@
-## Códigos de exemplo do Seminário
+## Trabalhos da Disciplina de Compiladores
+
+## O trabalho do transpilador está na pasta transpilador, com todas as instruções
 
 Componentes:
 
