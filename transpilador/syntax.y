@@ -116,7 +116,7 @@ EXPRESSAO :
 
 LOOP:
     ENQUANTO ABREP CONDICAO FECHAP ABREC {
-        printf("while %s:\n    ", $3); // Para Python, use ':' no final e indentação clara.        
+        printf("while %s:\n    ", $3); // Para Python, ':' no final com indentação clara.        
         free($3);
     }| CODIGOS FECHAC {
         printf("    \n"); // Indente o bloco corretamente
@@ -170,12 +170,12 @@ CONDICOES:
 
 CONDICIONAL:
     SE ABREP CONDICAO FECHAP ABREC {
-        printf("if %s:\n    ", $3); // Adiciona ':' e indentação para Python
+        printf("if %s:\n    ", $3); // Adiciona ':' e indentação
         free($3);
     }| FECHAC SENAO ABREC{
         printf("else:\n    "); // ':' para Python
     }| FECHAC SENAOSE ABREP CONDICAO FECHAP ABREC {
-        printf("elif %s:\n    ", $4); // Corrigido para Python com 'elif' e ':'
+        printf("elif %s:\n    ", $4); // Python usa com 'elif' e ':'
     };
 
 FUNCAO:
@@ -185,7 +185,7 @@ FUNCAO:
         free($4);
     }
     | RETURN VARIAVEIS PONTOVIRGULA {
-        printf("    return %s\n", $2); // Ajuste na indentação para Python
+        printf("    return %s\n", $2); // Ajuste na indentação
         free($2);
     }
     | FUNC PALAVRAS ABREP VARIAVEIS VIRGULA VARIAVEIS FECHAP ABREC {
